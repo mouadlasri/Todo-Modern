@@ -40,7 +40,7 @@ function newTask(name) {
 
 // const TaskContext = React.createContext(initialState);
 
-const TaskStateContext = React.createContext(initialState);
+const TaskStateContext = React.createContext();
 const TaskDispatchContext = React.createContext();
 
 export function TaskProvider({ children }) {

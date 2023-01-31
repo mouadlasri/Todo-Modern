@@ -1,30 +1,29 @@
 import { React, useState, useEffect } from "react";
-
-let list = [
-  {
-    id: 0,
-    name: "first task",
-  },
-  {
-    id: 1,
-    id: "second task",
-  },
-];
+import { useTaskState, useTaskDispatch } from "../../context/TaskContext";
 
 export function TaskList() {
-  const [tasks, setTasks] = useState();
-
-  useEffect(() => {
-    setTasks(list);
-  }, []);
+  const state = useTaskState();
+  const dispatch = useTaskDispatch();
 
   // Have the state and all functions that modify the state
   // Pass it to each task component
   return (
-    <>
-      {list.map((task) => (
-        <div>{task.name}</div>
-      ))}
-    </>
+    <div>
+      {state.tasks.map((task) => {
+        if (!task.complete) {
+          return (
+            <div key={task.id}>
+              {task.name}
+              <button onClick={() => dispatch({ type: "delete-task", payload: { id: task.id } })}>
+                Delete
+              </button>
+              <button onClick={() => dispatch({ type: "complete-task", payload: { id: task.id } })}>
+                Complete
+              </button>
+            </div>
+          );
+        }
+      })}
+    </div>
   );
 }
