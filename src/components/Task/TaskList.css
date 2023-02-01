@@ -1,0 +1,54 @@
+.task-container {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  animation: slideFadeDown 250ms forwards;
+}
+.task-default {
+  display: flex;
+  min-height: 52px;
+  padding: 0px 16px;
+  margin-top: 8px;
+  border-radius: 4px;
+  box-shadow: 0px 0.3px 0.9px rgb(0 0 0 / 10%), 0px 1.6px 3.6px rgb(0 0 0 / 10%);
+  align-items: center; /* align in the center horizontally */
+  background-color: white;
+}
+.task-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  width: 32px;
+  position: relative;
+  padding: 0px;
+  cursor: pointer;
+}
+.task-wrapper {
+  font-size: 0.9rem;
+  flex: 1 1 0px;
+  padding: 8px 14px;
+  line-height: 1.2rem;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  font-family: Segoe UI;
+}
+.task-metadata-info {
+  display: flex;
+  align-items: center;
+  font-size: 0.7rem;
+  color: #797775;
+  flex-wrap: wrap;
+}
+.task-metadata-info-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.task-metadata-info-title {
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

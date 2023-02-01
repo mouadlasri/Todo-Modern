@@ -37,3 +37,34 @@
     transform: rotate(360deg);
   }
 }
+
+.app-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-screen-container {
+  display: flex;
+  flex: 1 1 0px;
+  position: relative;
+  box-sizing: border-box;
+  will-change: width;
+  overflow: hidden;
+}
+
+.right-screen-home-container {
+  border: 2px solid red;
+  background-color: #faf9f8;
+  display: flex;
+  flex: 1 1 0px;
+  overflow: hidden;
+}
+
+.left-screen-navbar {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  transition: width 180ms ease;
+  width: 390px;
+}

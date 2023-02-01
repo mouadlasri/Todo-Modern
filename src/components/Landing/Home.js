@@ -5,17 +5,31 @@ import { useTaskState, useTaskDispatch } from "../../context/TaskContext";
 import { AddTask } from "../Task/AddTask";
 import { CompletedTask } from "../Task/CompletedTask";
 
+import "./Home.css";
+
 export function Home() {
   const state = useTaskState();
   const dispatch = useTaskDispatch();
   const [input, setInput] = useState("");
+
+  const styles = {
+    homeContainer: {
+      marginLeft: "24px",
+      marginRight: "24px",
+      height: "100%",
+      paddingBottom: "48px",
+    },
+    testContainerBorder: {
+      border: "2px solid green",
+    },
+  };
 
   useEffect(() => {
     console.log(`Tasks: ${JSON.stringify(state.tasks)}`);
   }, [state]);
 
   return (
-    <div>
+    <div style={styles.homeContainer} className="flex flex-col flex-1">
       <h1>Home </h1>
 
       {/* Three sub components */}
@@ -31,9 +45,7 @@ export function Home() {
       </div>
 
       {/* Component #3 - Form to add a new Task */}
-      <div>
-        <AddTask />
-      </div>
+      <AddTask />
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import "./AddTask.css";
 import { useTaskDispatch } from "../../context/TaskContext";
 
 export function AddTask() {
@@ -13,12 +13,24 @@ export function AddTask() {
     setInput("");
   }
 
+  function changeStyleFocus() {
+    // Make style as state
+  }
+
   return (
-    <div>
-      <h1>Add Task</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={input} onChange={(e) => setInput(e.target.value)}></input>
-      </form>
+    <div className="mt-auto">
+      <div className="w-full add-task-default">
+        {/* <h1>Add Task</h1> */}
+        <form onSubmit={handleSubmit} style={{ width: "100%" }}>
+          <input
+            type="text"
+            value={input}
+            placeholder="add task"
+            onChange={(e) => setInput(e.target.value)}
+            onFocus={() => changeStyleFocus()}
+          ></input>
+        </form>
+      </div>
     </div>
   );
 }
