@@ -20,12 +20,11 @@ function App() {
           <div className="main-screen-container">
             {/* Left Screen/Column */}
             <div className="left-screen-navbar">
-              <h1 className="text-3xl font-bold underline">Navbar</h1>
+              <h1 className="text-3xl font-bold underline">Side navbar</h1>
             </div>
 
-            {/* Right Screen/Column */}
+            {/* Right Screen/Column - Home Component*/}
             <div className="right-screen-home-container">
-              {/* Right Home Component (main component) */}
               {/* TODO : Replace Later with Router */}
               <Home />
             </div>

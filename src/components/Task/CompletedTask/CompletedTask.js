@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { useTaskState, useTaskDispatch } from "../../context/TaskContext";
+import { useTaskState, useTaskDispatch } from "../../../context/TaskContext";
+
+import "./CompletedTask.css";
 
 export function CompletedTask() {
   const state = useTaskState();
