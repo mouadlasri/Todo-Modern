@@ -111,12 +111,6 @@ export function Task({ task }) {
             ></path>
           </span>
         </div>
-        {/* <button onClick={() => dispatch({ type: "delete-task", payload: { id: task.id } })}>
-      Delete
-    </button>
-    <button onClick={() => dispatch({ type: "complete-task", payload: { id: task.id } })}>
-      Complete
-    </button> */}
       </div>
     </div>
   );
