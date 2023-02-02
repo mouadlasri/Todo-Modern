@@ -24,8 +24,25 @@ export function Task({ task }) {
     setIsClicked((isClicked) => !isClicked);
   }
 
+  function svgIcon() {
+    if (task.complete) {
+      return "M10 2a8 8 0 110 16 8 8 0 010-16zm3.36 5.65a.5.5 0 00-.64-.06l-.07.06L9 11.3 7.35 9.65l-.07-.06a.5.5 0 00-.7.7l.07.07 2 2 .07.06c.17.11.4.11.56 0l.07-.06 4-4 .07-.08a.5.5 0 00-.06-.63z";
+    } else {
+      if (svgIsHovered) {
+        return "M10 2a8 8 0 110 16 8 8 0 010-16zm0 1a7 7 0 100 14 7 7 0 000-14zm3.36 4.65c.17.17.2.44.06.63l-.06.07-4 4a.5.5 0 01-.64.07l-.07-.06-2-2a.5.5 0 01.63-.77l.07.06L9 11.3l3.65-3.65c.2-.2.51-.2.7 0z";
+      } else if (!svgIsHovered) {
+        return "M10 3a7 7 0 100 14 7 7 0 000-14zm-8 7a8 8 0 1116 0 8 8 0 01-16 0z";
+      }
+    }
+  }
+
   const styles = {
-    backgroundColor: isClicked ? "#eff6fc" : "",
+    taskDefault: {
+      backgroundColor: isClicked ? "#eff6fc" : "",
+    },
+    taskCompleteText: {
+      textDecoration: task.complete ? "line-through" : "none",
+    },
   };
 
   return (
@@ -35,7 +52,7 @@ export function Task({ task }) {
         className={`task-default ${
           taskContainerIsHovered ? "task-item-hovered" : "task-item-not-hovered"
         }`}
-        style={styles}
+        style={styles.taskDefault}
         onMouseEnter={handleTaskContainerHover}
         onMouseLeave={handleTaskContainerHover}
       >
@@ -55,18 +72,11 @@ export function Task({ task }) {
             onMouseEnter={handleSvgHover}
             onMouseLeave={handleSvgHover}
           >
-            <path
-              d={
-                svgIsHovered
-                  ? "M10 2a8 8 0 110 16 8 8 0 010-16zm0 1a7 7 0 100 14 7 7 0 000-14zm3.36 4.65c.17.17.2.44.06.63l-.06.07-4 4a.5.5 0 01-.64.07l-.07-.06-2-2a.5.5 0 01.63-.77l.07.06L9 11.3l3.65-3.65c.2-.2.51-.2.7 0z"
-                  : "M10 3a7 7 0 100 14 7 7 0 000-14zm-8 7a8 8 0 1116 0 8 8 0 01-16 0z"
-              }
-              fill="#2564cf"
-            ></path>
+            <path d={svgIcon()} fill="#2564cf"></path>
           </svg>
         </span>
         <button className="task-wrapper">
-          <span aria-label={task.name}>
+          <span aria-label={task.name} style={styles.taskCompleteText}>
             {" "}
             <span>{task.name} </span>{" "}
           </span>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useTaskState, useTaskDispatch } from "../../../context/TaskContext";
-
+import { Task } from "../Task";
 import "./CompletedTask.css";
 
 export function CompletedTask() {
@@ -12,11 +12,7 @@ export function CompletedTask() {
       <h1>Completed Tasks</h1>
       {state.tasks.map((task) => {
         if (task.complete) {
-          return (
-            <div key={task.id}>
-              <h1>{task.name}</h1>
-            </div>
-          );
+          return <Task task={task} />;
         }
       })}
     </div>
