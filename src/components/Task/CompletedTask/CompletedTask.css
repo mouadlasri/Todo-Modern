@@ -7,4 +7,12 @@
   display: flex;
   flex: 1 1 0;
   padding: 2px 8px;
+  text-transform: capitalize;
+}
+
+.count-completed-tasks-label {
+  font-weight: normal;
+  margin-left: 0.85em;
+  font-size: 0.75rem;
+  align-items: center;
 }

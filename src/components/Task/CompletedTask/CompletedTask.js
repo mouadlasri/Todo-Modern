@@ -32,44 +32,49 @@ export function CompletedTask() {
   }
 
   return (
-    <div className="flex-1 mt-4 items-center ">
-      <button
-        className="collapse-button px-6 py-2.5  items-center  font-medium text-xs leading-tight uppercase rounded shadow-md  transition duration-500 ease-in-out"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#collapseExample"
-        aria-expanded="false"
-        aria-controls="collapseExample"
-        onClick={toggleCollapseIcon}
-      >
-        <span className="task-checkbox items-center">
-          <svg
-            class="fluentIcon ___12fm75w f1w7gpdv fez10in fg4l7m0 transition duration-500 ease-in-out"
-            fill="#2564cf"
-            aria-hidden="true"
-            width="20"
-            height="20"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-            focusable="false"
+    <>
+      {countCompletedTasks > 0 && (
+        <div className="flex-1 mt-4 items-center ">
+          <button
+            className="collapse-button px-6 py-2.5  items-center  font-medium text-xs leading-tight uppercase rounded shadow-md  transition duration-500 ease-in-out"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapseExample"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+            onClick={toggleCollapseIcon}
           >
-            <path d={svgIcon()} fill="#2564cf"></path>
-          </svg>
-        </span>
-        Completed Tasks {countCompletedTasks}
-      </button>
+            <span className="task-checkbox items-center">
+              <svg
+                class="fluentIcon ___12fm75w f1w7gpdv fez10in fg4l7m0 transition duration-500 ease-in-out"
+                fill="#2564cf"
+                aria-hidden="true"
+                width="20"
+                height="20"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+                focusable="false"
+              >
+                <path d={svgIcon()} fill="#2564cf"></path>
+              </svg>
+            </span>
+            Completed Tasks{" "}
+            <span className="count-completed-tasks-label">{countCompletedTasks}</span>
+          </button>
 
-      <div className="collapse" id="collapseExample">
-        {state.tasks.map((task) => {
-          if (task.complete) {
-            return (
-              <div key={task.id}>
-                <Task task={task} />
-              </div>
-            );
-          }
-        })}
-      </div>
-    </div>
+          <div className="collapse" id="collapseExample">
+            {state.tasks.map((task) => {
+              if (task.complete) {
+                return (
+                  <div key={task.id}>
+                    <Task task={task} />
+                  </div>
+                );
+              }
+            })}
+          </div>
+        </div>
+      )}
+    </>
   );
 }

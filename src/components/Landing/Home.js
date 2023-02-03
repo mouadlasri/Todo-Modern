@@ -30,7 +30,7 @@ export function Home() {
 
   return (
     <div style={styles.homeContainer} className="flex flex-col flex-1">
-      <h1>Home </h1>
+      <h1> </h1>
 
       {/* Three sub components */}
 
