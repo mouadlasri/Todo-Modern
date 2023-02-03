@@ -49,7 +49,6 @@ export function Task({ task }) {
   return (
     <div className={`task-container`} onClick={handleClick}>
       <div
-        key={task.id}
         className={`task-default ${
           taskContainerIsHovered ? "task-item-hovered" : "task-item-not-hovered"
         }`}

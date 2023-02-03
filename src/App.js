@@ -4,14 +4,15 @@ import "./App.css";
 import { Home } from "./components/Landing/Home";
 import { TaskProvider } from "./context/TaskContext";
 import { TopNavbar } from "./components/TopNavbar/TopNavbar";
+import { SideNavbar } from "./components/SideNavbar/SideNavbar";
 
 function App() {
   return (
     <div className="App">
       <h1></h1>
       <TaskProvider>
-        {/* Left Navigation Bar */}
         <div className="app-container">
+          {/* Top navigation bar */}
           <div>
             <TopNavbar />
           </div>
@@ -20,7 +21,7 @@ function App() {
           <div className="main-screen-container">
             {/* Left Screen/Column */}
             <div className="left-screen-navbar">
-              <h1 className="text-3xl font-bold underline">Side navbar</h1>
+              <SideNavbar />
             </div>
 
             {/* Right Screen/Column - Home Component*/}

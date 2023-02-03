@@ -15,7 +15,11 @@ export function TaskList() {
     <div>
       {state.tasks.map((task) => {
         if (!task.complete) {
-          return <Task task={task} />;
+          return (
+            <div key={task.id}>
+              <Task task={task} />
+            </div>
+          );
         }
       })}
     </div>

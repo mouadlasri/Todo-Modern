@@ -1,0 +1,10 @@
+.completed-task-container {
+  display: flex;
+  flex: 1 1 0px;
+}
+
+.collapse-button {
+  display: flex;
+  flex: 1 1 0;
+  padding: 2px 8px;
+}
