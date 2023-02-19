@@ -17,10 +17,10 @@ export function CompletedTask() {
 
   useEffect(() => {
     // Filter the completed tasks
-    let compeleteTasks = state.tasks.filter((item) => item.complete === true);
+    let completeTasks = state.tasks.filter((task) => task.complete === true);
 
     // Set the count
-    setCountCompletedTasks(compeleteTasks.length);
+    setCountCompletedTasks(completeTasks.length);
   }, [state.tasks]);
 
   function svgIcon() {
@@ -39,9 +39,9 @@ export function CompletedTask() {
             className="collapse-button px-6 py-2.5  items-center  font-medium text-xs leading-tight uppercase rounded shadow-md  transition duration-500 ease-in-out"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#collapseExample"
+            data-bs-target="#collapseCompletedTasks"
             aria-expanded="false"
-            aria-controls="collapseExample"
+            aria-controls="collapseCompletedTasks"
             onClick={toggleCollapseIcon}
           >
             <span className="task-checkbox items-center">
@@ -62,7 +62,7 @@ export function CompletedTask() {
             <span className="count-completed-tasks-label">{countCompletedTasks}</span>
           </button>
 
-          <div className="collapse" id="collapseExample">
+          <div className="collapse" id="collapseCompletedTasks">
             {state.tasks.map((task) => {
               if (task.complete) {
                 return (
