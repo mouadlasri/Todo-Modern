@@ -1,0 +1,47 @@
+.sidebar {
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 0px;
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+  padding-top: 1px;
+}
+
+.sidebar-content ul {
+  list-style: none;
+}
+
+.sidebar-list-item-inner {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px 12px 24px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.sidebar-list-item-title {
+  font-size: 1rem;
+  line-height: 20px;
+  height: 20px;
+  font-weight: 400;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-left: 16px;
+}
+
+.fluentIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 0px;
+}

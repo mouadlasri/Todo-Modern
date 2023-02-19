@@ -3,4 +3,26 @@
   border-bottom: solid 1px #e1dfdd;
   background-color: #2564cf;
   background-image: none;
+  display: flex;
+  align-items: center;
+}
+
+.top-navbar {
+  /* flex: 1 1 0px;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%; */
+}
+
+.top-navbar-branding {
+  padding: 0 12px 0 8px;
+  color: #fff;
+  margin-left: 30px;
+}
+
+.top-navbar-branding span {
+  font-size: 16px;
+  line-height: 48px;
+  font-weight: 600;
+  font-family: "Segoe UI Semibold";
 }
