@@ -30,8 +30,6 @@ export function TaskList() {
     setCountOngoingTasks(ongoingTasks.length);
   }, [state.tasks]);
 
-  // Have the state and all functions that modify the state
-  // Pass it to each task component
   return (
     <>
       {countOngoingTasks > 0 && (
