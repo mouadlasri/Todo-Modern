@@ -14,6 +14,7 @@ function reducer(state, action) {
         ...state, // deep copy of the state (= initialState above)
         tasks: [...state.tasks, newTask(action.payload.name)],
       };
+
     case "delete-task":
       let newTasks = state.tasks.filter((task) => task.id !== action.payload.id);
       return { ...state, tasks: [...newTasks] };
@@ -29,13 +30,28 @@ function reducer(state, action) {
           }
         }),
       };
+
+    case "favorite-task":
+      console.log("Payload called");
+      return {
+        ...state,
+        tasks: state.tasks.map((task) => {
+          if (task.id === action.payload.id) {
+            return { ...task, favorite: !task.favorite };
+          } else {
+            return task;
+          }
+        }),
+      };
+
     default:
       return state;
   }
 }
 
+// Function to create a new task, give it all the necessary attributes
 function newTask(name) {
-  return { id: Date.now(), name: name, complete: false };
+  return { id: Date.now(), name: name, complete: false, favorite: false };
 }
 
 // const TaskContext = React.createContext(initialState);

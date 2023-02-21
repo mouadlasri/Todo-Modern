@@ -32,6 +32,13 @@
   box-sizing: border-box;
 }
 
+.sidebar-list-item-inner-count {
+  margin-left: auto;
+  font-size: 0.9rem;
+  font-family: Consolas;
+  line-height: 20px;
+}
+
 .sidebar-list-item-title {
   font-size: 0.9rem;
   line-height: 20px;
