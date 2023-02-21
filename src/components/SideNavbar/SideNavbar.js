@@ -9,7 +9,20 @@ export function SideNavbar() {
   const [countOngoingTasks, setCountOngoingTasks] = useState(0);
   const [countFavoriteTasks, setCountFavoriteTasks] = useState(0);
 
-  const sideBarMenu = [{ id: 1, text: "" }];
+  // myday - important - all - completed
+  const sideBarMenu = [
+    {
+      id: 1,
+      id: "myday",
+      text: "My Day",
+      svgClass: "",
+      svgPath: "",
+      width: "",
+      height: "",
+      fill: "",
+      counter: "",
+    },
+  ];
 
   useEffect(() => {
     // Filter the completed tasks
@@ -27,6 +40,14 @@ export function SideNavbar() {
     setCountOngoingTasks(ongoingTasks.length);
     setCountFavoriteTasks(favoriteTasks.length);
   }, [state.tasks]);
+
+  /*
+    replace the current Return method with an array mapping of sideBarMenu array
+    objective: make the active and inactive menu items on click, without triggering the other menu items
+    reference:  https://codesandbox.io/s/cool-mahavira-q4qmxx?file=/src/App.js
+    
+
+  */
 
   return (
     <div className="sidebar">
