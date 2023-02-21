@@ -47,6 +47,7 @@ export function SideNavbar() {
     reference:  https://codesandbox.io/s/cool-mahavira-q4qmxx?file=/src/App.js
     
 
+    also: do the same thing for the Tasklist Click.
   */
 
   return (
