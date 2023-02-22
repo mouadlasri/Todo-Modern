@@ -24,6 +24,10 @@
   background-color: #f5f5f5;
 }
 
+.sidebar-list-item-active {
+  background-color: #eff6fc !important;
+}
+
 .sidebar-list-item-inner {
   display: flex;
   align-items: center;
