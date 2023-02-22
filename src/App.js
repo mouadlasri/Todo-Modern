@@ -44,7 +44,7 @@ function App() {
                 {/* Outlet where the element component in router will display */}
                 <Outlet />
 
-                {/* TODO : Replace Later with Router */}
+                {/* TODO : Replaced with Router */}
                 {/* <Home /> */}
               </div>
             </div>
