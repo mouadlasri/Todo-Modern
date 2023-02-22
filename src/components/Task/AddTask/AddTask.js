@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./AddTask.css";
 import { useTaskDispatch } from "../../../context/TaskContext";
+import "./AddTask.css";
 
 export function AddTask() {
   const [input, setInput] = useState("");

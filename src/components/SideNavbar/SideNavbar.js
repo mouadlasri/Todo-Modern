@@ -10,7 +10,7 @@ export function SideNavbar() {
   const [countFavoriteTasks, setCountFavoriteTasks] = useState(0);
   const [activeId, setActiveId] = useState();
 
-  // myday - important - all - completed
+  // 'myday' - 'important' - 'all' - 'completed'  menu items
   const sideBarMenu = [
     {
       id: 1,
@@ -21,7 +21,7 @@ export function SideNavbar() {
       width: "24",
       height: "24",
       fill: "currentColor",
-      counter: "",
+      counter: countOngoingTasks > 0 && countOngoingTasks,
       pathD:
         "M10 2c.28 0 .5.22.5.5v1a.5.5 0 01-1 0v-1c0-.28.22-.5.5-.5zm0 12a4 4 0 100-8 4 4 0 000 8zm0-1a3 3 0 110-6 3 3 0 010 6zm7.5-2.5a.5.5 0 000-1h-1a.5.5 0 000 1h1zM10 16c.28 0 .5.22.5.5v1a.5.5 0 01-1 0v-1c0-.28.22-.5.5-.5zm-6.5-5.5a.5.5 0 000-1H2.46a.5.5 0 000 1H3.5zm.65-6.35c.2-.2.5-.2.7 0l1 1a.5.5 0 11-.7.7l-1-1a.5.5 0 010-.7zm.7 11.7a.5.5 0 01-.7-.7l1-1a.5.5 0 01.7.7l-1 1zm11-11.7a.5.5 0 00-.7 0l-1 1a.5.5 0 00.7.7l1-1a.5.5 0 000-.7zm-.7 11.7a.5.5 0 00.7-.7l-1-1a.5.5 0 00-.7.7l1 1z",
       pathFill: "currentColor",
@@ -70,30 +70,6 @@ export function SideNavbar() {
     },
   ];
 
-  /* Object Template
-
-    <li>
-      <div id={} classItem="sidebar-list-item">
-              <div className="sidebar-list-item-inner">
-                <svg
-                  focusable="false"
-                  aria-hidden="true"
-                  width="24"
-                  height="24"
-                  fill="#C75F5B"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M3 12c0-2.168 1.36-4 3.5-4 1.352 0 2.291.498 3.053 1.26.486.486.899 1.078 1.293 1.729.176-.316.363-.647.564-.982a9.018 9.018 0 00-1.15-1.454C9.334 7.627 8.148 7 6.5 7 3.64 7 2 9.466 2 12s1.64 5 4.5 5c1.648 0 2.834-.627 3.76-1.553.92-.919 1.551-2.078 2.177-3.204.633-1.14 1.225-2.198 2.01-2.983C15.21 8.498 16.148 8 17.5 8c2.14 0 3.5 1.832 3.5 4s-1.36 4-3.5 4c-1.352 0-2.291-.498-3.053-1.26-.486-.486-.899-1.078-1.293-1.729-.176.316-.363.647-.564.982a9.02 9.02 0 001.15 1.454c.926.926 2.112 1.553 3.76 1.553 2.86 0 4.5-2.466 4.5-5s-1.64-5-4.5-5c-1.648 0-2.834.627-3.76 1.553-.893.893-1.547 2.07-2.159 3.171-.585 1.054-1.168 2.155-2.028 3.016C8.79 15.502 7.852 16 6.5 16 4.36 16 3 14.168 3 12z"></path>
-                </svg>
-                <span className="sidebar-list-item-title">All</span>
-                <div className="sidebar-list-item-inner-count">
-                  {countAllTasks > 0 && countAllTasks}
-                </div>
-              </div>
-            </div>
-    </li>
-
-  */
   useEffect(() => {
     // Filter the completed tasks
     let completeTasks = state.tasks.filter((task) => task.complete === true);
@@ -110,16 +86,6 @@ export function SideNavbar() {
     setCountOngoingTasks(ongoingTasks.length);
     setCountFavoriteTasks(favoriteTasks.length);
   }, [state.tasks]);
-
-  /*
-    replace the current Return method with an array mapping of sideBarMenu array
-    objective: make the active and inactive menu items on click, without triggering the other menu items
-    reference:  https://codesandbox.io/s/cool-mahavira-q4qmxx?file=/src/App.js
-    
-
-    TODO:
-    do the same thing for the Tasklist Click
-  */
 
   return (
     <div className="sidebar">

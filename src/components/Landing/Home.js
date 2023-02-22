@@ -1,4 +1,4 @@
-import { React, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { TaskList } from "../Task/TaskList/TaskList";
 import { useTaskState, useTaskDispatch } from "../../context/TaskContext";
 
