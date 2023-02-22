@@ -28,11 +28,10 @@ export function Home() {
   }, [state]);
 
   return (
-    <div style={styles.homeContainer} className="flex flex-col flex-1">
+    <>
       <h1> </h1>
 
       {/* Three sub components */}
-
       {/* Component #1 - Display all notes */}
       <div>
         <TaskList />
@@ -45,6 +44,6 @@ export function Home() {
 
       {/* Component #3 - Form to add a new Task */}
       <AddTask />
-    </div>
+    </>
   );
 }

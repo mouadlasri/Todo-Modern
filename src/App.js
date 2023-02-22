@@ -9,6 +9,18 @@ import { SideNavbar } from "./components/SideNavbar/SideNavbar";
 import { Outlet } from "react-router-dom";
 
 function App() {
+  const styles = {
+    homeContainer: {
+      marginLeft: "24px",
+      marginRight: "24px",
+      height: "100%",
+      paddingBottom: "48px",
+    },
+    testContainerBorder: {
+      border: "2px solid green",
+    },
+  };
+
   return (
     <div className="App">
       <h1></h1>
@@ -28,10 +40,13 @@ function App() {
 
             {/* Right Screen/Column - Home Component*/}
             <div className="right-screen-home-container">
-              <Outlet />
+              <div style={styles.homeContainer} className="flex flex-col flex-1">
+                {/* Outlet where the element component in router will display */}
+                <Outlet />
 
-              {/* TODO : Replace Later with Router */}
-              {/* <Home /> */}
+                {/* TODO : Replace Later with Router */}
+                {/* <Home /> */}
+              </div>
             </div>
           </div>
         </div>
