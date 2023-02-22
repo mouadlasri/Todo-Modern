@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useTaskState } from "../../context/TaskContext";
 import "./SideNavbar.css";
+import { Link } from "react-router-dom";
 
 export function SideNavbar() {
   const state = useTaskState();
@@ -25,6 +26,7 @@ export function SideNavbar() {
       pathD:
         "M10 2c.28 0 .5.22.5.5v1a.5.5 0 01-1 0v-1c0-.28.22-.5.5-.5zm0 12a4 4 0 100-8 4 4 0 000 8zm0-1a3 3 0 110-6 3 3 0 010 6zm7.5-2.5a.5.5 0 000-1h-1a.5.5 0 000 1h1zM10 16c.28 0 .5.22.5.5v1a.5.5 0 01-1 0v-1c0-.28.22-.5.5-.5zm-6.5-5.5a.5.5 0 000-1H2.46a.5.5 0 000 1H3.5zm.65-6.35c.2-.2.5-.2.7 0l1 1a.5.5 0 11-.7.7l-1-1a.5.5 0 010-.7zm.7 11.7a.5.5 0 01-.7-.7l1-1a.5.5 0 01.7.7l-1 1zm11-11.7a.5.5 0 00-.7 0l-1 1a.5.5 0 00.7.7l1-1a.5.5 0 000-.7zm-.7 11.7a.5.5 0 00.7-.7l-1-1a.5.5 0 00-.7.7l1 1z",
       pathFill: "currentColor",
+      urlRoute: "/tasks",
     },
     {
       id: 2,
@@ -67,6 +69,7 @@ export function SideNavbar() {
       pathD:
         "M10 2a8 8 0 110 16 8 8 0 010-16zm0 1a7 7 0 100 14 7 7 0 000-14zm3.36 4.65c.17.17.2.44.06.63l-.06.07-4 4a.5.5 0 01-.64.07l-.07-.06-2-2a.5.5 0 01.63-.77l.07.06L9 11.3l3.65-3.65c.2-.2.51-.2.7 0z",
       pathFill: "",
+      urlRoute: "/tasks/completed",
     },
   ];
 
@@ -92,31 +95,33 @@ export function SideNavbar() {
       <div className="sidebar-content">
         <ul className="sidebar-lists">
           {sideBarMenu.map((menu) => (
-            <li id={menu.id}>
-              <div id={menu.divId} classItem="sidebar-list-item">
-                <div
-                  className={
-                    activeId === menu.id
-                      ? "sidebar-list-item-active sidebar-list-item-inner"
-                      : "sidebar-list-item-inactive sidebar-list-item-inner"
-                  }
-                  onClick={() => setActiveId(menu.id)}
-                >
-                  <svg
-                    className={menu.svgClass}
-                    focusable="false"
-                    aria-hidden="true"
-                    width={menu.width}
-                    height={menu.height}
-                    fill={menu.fill}
-                    xmlns="http://www.w3.org/2000/svg"
+            <li key={menu.id}>
+              <Link to={menu.urlRoute}>
+                <div id={menu.divId} classItem="sidebar-list-item">
+                  <div
+                    className={
+                      activeId === menu.id
+                        ? "sidebar-list-item-active sidebar-list-item-inner"
+                        : "sidebar-list-item-inactive sidebar-list-item-inner"
+                    }
+                    onClick={() => setActiveId(menu.id)}
                   >
-                    <path d={menu.pathD} fill={menu.pathFill}></path>
-                  </svg>
-                  <span className="sidebar-list-item-title">{menu.text}</span>
-                  <div className="sidebar-list-item-inner-count">{menu.counter}</div>
+                    <svg
+                      className={menu.svgClass}
+                      focusable="false"
+                      aria-hidden="true"
+                      width={menu.width}
+                      height={menu.height}
+                      fill={menu.fill}
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path d={menu.pathD} fill={menu.pathFill}></path>
+                    </svg>
+                    <span className="sidebar-list-item-title">{menu.text}</span>
+                    <div className="sidebar-list-item-inner-count">{menu.counter}</div>
+                  </div>
                 </div>
-              </div>
+              </Link>
             </li>
           ))}
         </ul>

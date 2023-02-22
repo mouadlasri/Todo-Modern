@@ -6,6 +6,7 @@ import { Home } from "./components/Landing/Home";
 import { TaskProvider } from "./context/TaskContext";
 import { TopNavbar } from "./components/TopNavbar/TopNavbar";
 import { SideNavbar } from "./components/SideNavbar/SideNavbar";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
@@ -27,8 +28,10 @@ function App() {
 
             {/* Right Screen/Column - Home Component*/}
             <div className="right-screen-home-container">
+              <Outlet />
+
               {/* TODO : Replace Later with Router */}
-              <Home />
+              {/* <Home /> */}
             </div>
           </div>
         </div>

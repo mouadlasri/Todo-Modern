@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { TaskList } from "../Task/TaskList/TaskList";
 import { useTaskState, useTaskDispatch } from "../../context/TaskContext";
-
 import { AddTask } from "../Task/AddTask/AddTask";
 import { CompletedTask } from "../Task/CompletedTask/CompletedTask";
 
