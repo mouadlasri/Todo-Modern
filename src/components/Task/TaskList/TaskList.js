@@ -9,7 +9,7 @@ export function TaskList() {
   const state = useTaskState();
   const dispatch = useTaskDispatch();
   const [countOngoingTasks, setCountOngoingTasks] = useState(0);
-  const [collapsed, setCollapsed] = useState(true);
+  const [collapsed, setCollapsed] = useState(false);
 
   function toggleCollapseIcon() {
     setCollapsed((collapsed) => !collapsed);
@@ -35,7 +35,7 @@ export function TaskList() {
       {countOngoingTasks > 0 && (
         <div className="flex-1 mt-4 items-center">
           <button
-            className="collapse-button px-6 py-2.5  items-center  font-medium text-xs leading-tight uppercase rounded shadow-md  transition duration-500 ease-in-out"
+            className="collapse-button collapse-show px-6 py-2.5 items-center font-medium text-xs leading-tight uppercase rounded shadow-md  transition duration-500 ease-in-out"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#collapseOngoingTasks"
@@ -60,7 +60,7 @@ export function TaskList() {
             Ongoing Tasks <span className="count-completed-tasks-label">{countOngoingTasks}</span>
           </button>
 
-          <div className="collapse" id="collapseOngoingTasks">
+          <div className="collapse show" id="collapseOngoingTasks">
             {state.tasks.map((task) => {
               if (!task.complete) {
                 return (
