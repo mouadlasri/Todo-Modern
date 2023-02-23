@@ -31,13 +31,13 @@ function reducer(state, action) {
         }),
       };
 
-    case "favorite-task":
+    case "important-task":
       console.log("Payload called");
       return {
         ...state,
         tasks: state.tasks.map((task) => {
           if (task.id === action.payload.id) {
-            return { ...task, favorite: !task.favorite };
+            return { ...task, important: !task.important };
           } else {
             return task;
           }
@@ -51,7 +51,7 @@ function reducer(state, action) {
 
 // Function to create a new task, give it all the necessary attributes
 function newTask(name) {
-  return { id: Date.now(), name: name, complete: false, favorite: false };
+  return { id: Date.now(), name: name, complete: false, important: false };
 }
 
 // const TaskContext = React.createContext(initialState);

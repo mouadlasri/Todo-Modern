@@ -8,7 +8,7 @@ export function SideNavbar() {
   const [countCompletedTasks, setCountCompletedTasks] = useState(0);
   const [countAllTasks, setCountAllTasks] = useState(0);
   const [countOngoingTasks, setCountOngoingTasks] = useState(0);
-  const [countFavoriteTasks, setCountFavoriteTasks] = useState(0);
+  const [countImportantTasks, setCountImportantTasks] = useState(0);
   const [activeId, setActiveId] = useState();
 
   // 'myday' - 'important' - 'all' - 'completed'  menu items
@@ -37,7 +37,7 @@ export function SideNavbar() {
       width: "22",
       height: "22",
       fill: "currentColor",
-      counter: countFavoriteTasks > 0 && countFavoriteTasks,
+      counter: countImportantTasks > 0 && countImportantTasks,
       pathD:
         "M9.1 2.9a1 1 0 011.8 0l1.93 3.91 4.31.63a1 1 0 01.56 1.7l-3.12 3.05.73 4.3a1 1 0 01-1.45 1.05L10 15.51l-3.86 2.03a1 1 0 01-1.45-1.05l.74-4.3L2.3 9.14a1 1 0 01.56-1.7l4.31-.63L9.1 2.9zm.9.44L8.07 7.25a1 1 0 01-.75.55L3 8.43l3.12 3.04a1 1 0 01.3.89l-.75 4.3 3.87-2.03a1 1 0 01.93 0l3.86 2.03-.74-4.3a1 1 0 01.29-.89L17 8.43l-4.32-.63a1 1 0 01-.75-.55L10 3.35z",
       pathFill: "#ffca28",
@@ -82,14 +82,14 @@ export function SideNavbar() {
     // Filter the ongoing tasks
     let ongoingTasks = state.tasks.filter((task) => task.complete === false);
 
-    // Filter the favorite tasks
-    let favoriteTasks = state.tasks.filter((task) => task.favorite === true);
+    // Filter the important tasks
+    let importantTasks = state.tasks.filter((task) => task.important === true);
 
     // Set the count for completed tasks
     setCountCompletedTasks(completeTasks.length);
     setCountAllTasks(state.tasks.length);
     setCountOngoingTasks(ongoingTasks.length);
-    setCountFavoriteTasks(favoriteTasks.length);
+    setCountImportantTasks(importantTasks.length);
   }, [state.tasks]);
 
   return (

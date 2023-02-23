@@ -37,16 +37,16 @@ export function Task({ task }) {
     }
   }
 
-  function svgIconFavorite() {
-    if (task.favorite) {
+  function svgIconImportant() {
+    if (task.important) {
       return "M9.1 2.9a1 1 0 011.8 0l1.93 3.91 4.31.63a1 1 0 01.56 1.7l-3.12 3.05.73 4.3a1 1 0 01-1.45 1.05L10 15.51l-3.86 2.03a1 1 0 01-1.45-1.05l.74-4.3L2.3 9.14a1 1 0 01.56-1.7l4.31-.63L9.1 2.9z";
     } else {
       return "M9.1 2.9a1 1 0 011.8 0l1.93 3.91 4.31.63a1 1 0 01.56 1.7l-3.12 3.05.73 4.3a1 1 0 01-1.45 1.05L10 15.51l-3.86 2.03a1 1 0 01-1.45-1.05l.74-4.3L2.3 9.14a1 1 0 01.56-1.7l4.31-.63L9.1 2.9zm.9.44L8.07 7.25a1 1 0 01-.75.55L3 8.43l3.12 3.04a1 1 0 01.3.89l-.75 4.3 3.87-2.03a1 1 0 01.93 0l3.86 2.03-.74-4.3a1 1 0 01.29-.89L17 8.43l-4.32-.63a1 1 0 01-.75-.55L10 3.35z";
     }
   }
 
-  function svgIconFavoriteFill() {
-    if (task.favorite) {
+  function svgIconImportantFill() {
+    if (task.important) {
       return "#fde235";
     } else {
       return "currentColor";
@@ -105,11 +105,11 @@ export function Task({ task }) {
           </div>
         </button>
         <div
-          className="task-toggle-favorite"
+          className="task-toggle-important"
           onClick={(e) => {
             e.stopPropagation();
 
-            dispatch({ type: "favorite-task", payload: { id: task.id } });
+            dispatch({ type: "important-task", payload: { id: task.id } });
             console.log("it was clicked");
           }}
         >
@@ -124,7 +124,7 @@ export function Task({ task }) {
               xmlns="http://www.w3.org/2000/svg"
               focusable="false"
             >
-              <path d={svgIconFavorite()} fill={svgIconFavoriteFill()}></path>
+              <path d={svgIconImportant()} fill={svgIconImportantFill()}></path>
             </svg>
           </span>
         </div>
