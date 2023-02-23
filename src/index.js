@@ -6,11 +6,13 @@ import reportWebVitals from "./reportWebVitals";
 
 import { Home } from "./components/Landing/Home";
 import { CompletedTask } from "./components/Task/CompletedTask/CompletedTask";
+import { AllTask } from "./components/Task/AllTask/AllTask";
 
 import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 
 // Tailwind elements plugin (extension to tailwind that includes out of the box components)
 import "tw-elements";
+import { ImportantTask } from "./components/Task/ImportantTask/ImportantTask";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +26,14 @@ const router = createBrowserRouter([
       {
         path: "/tasks",
         element: <Home />,
+      },
+      {
+        path: "/tasks/important",
+        element: <ImportantTask />,
+      },
+      {
+        path: "/tasks/all",
+        element: <AllTask />,
       },
       {
         path: "/tasks/completed",
