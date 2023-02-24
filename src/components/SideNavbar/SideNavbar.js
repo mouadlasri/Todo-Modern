@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useTaskState } from "../../context/TaskContext";
 import "./SideNavbar.css";
 import { Link } from "react-router-dom";
+import { User } from "../User/User";
 
 export function SideNavbar() {
   const state = useTaskState();
@@ -94,6 +95,11 @@ export function SideNavbar() {
 
   return (
     <div className="sidebar">
+      <div style={{ marginBottom: "20px" }}>
+        <User />
+      </div>
+      {/* Divider Line */}
+      <span class="h-0.5 w-full bg-blue-600 w-4/5 m-auto mb-4"></span>
       <div className="sidebar-content">
         <ul className="sidebar-lists">
           {sideBarMenu.map((menu) => (

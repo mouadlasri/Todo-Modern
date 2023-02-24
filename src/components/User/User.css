@@ -1,0 +1,52 @@
+.user-container {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 20px;
+}
+
+.user-wrapper {
+  font-size: 0.9rem;
+  flex: 1 1 0px;
+  padding: 0px 14px;
+  line-height: 1.2rem;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  font-family: Segoe UI;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-image {
+  border-radius: 50%;
+  height: 65px;
+}
+
+.user-container-inner {
+  display: flex;
+  align-items: center;
+}
+
+img {
+  display: flex;
+}
+
+.user-metadata-info {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #797775;
+  flex-wrap: wrap;
+}
+.user-metadata-info-group {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.user-metadata-info-title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
