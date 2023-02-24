@@ -57,7 +57,7 @@ export function TaskList() {
                 <path d={svgIcon()} fill="#2564cf"></path>
               </svg>
             </span>
-            Ongoing Tasks <span className="count-completed-tasks-label">{countOngoingTasks}</span>
+            Ongoing Tasks <span className="count-ongoing-tasks-label">{countOngoingTasks}</span>
           </button>
 
           <div className="collapse show" id="collapseOngoingTasks">
