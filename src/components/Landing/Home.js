@@ -43,7 +43,7 @@ export function Home() {
       </div>
 
       {/* Component #3 - Form to add a new Task */}
-      <AddTask />
+      <AddTask taskType={{ important: false, styleIconColor: "#2564cf" }} />
     </>
   );
 }

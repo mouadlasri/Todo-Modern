@@ -2,14 +2,13 @@ import React, { useState } from "react";
 import { useTaskDispatch } from "../../../context/TaskContext";
 import "./AddTask.css";
 
-export function AddTask() {
+export function AddTask({ taskType }) {
   const [input, setInput] = useState("");
-
   const dispatch = useTaskDispatch();
 
   function handleSubmit(e) {
     e.preventDefault();
-    dispatch({ type: "add-task", payload: { name: input } });
+    dispatch({ type: "add-task", payload: { name: input, important: taskType.important } });
     setInput("");
   }
 
@@ -23,7 +22,7 @@ export function AddTask() {
         <span className="task-checkbox">
           <svg
             class="fluentIcon ___12fm75w f1w7gpdv fez10in fg4l7m0"
-            fill="#2564cf"
+            fill={taskType.styleIconColor}
             aria-hidden="true"
             width="20"
             height="20"
@@ -33,7 +32,7 @@ export function AddTask() {
           >
             <path
               d="M10 3a7 7 0 100 14 7 7 0 000-14zm-8 7a8 8 0 1116 0 8 8 0 01-16 0z"
-              fill="#2564cf"
+              fill={taskType.styleIconColor}
             ></path>
           </svg>
         </span>

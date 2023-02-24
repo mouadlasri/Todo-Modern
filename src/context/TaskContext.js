@@ -12,7 +12,7 @@ function reducer(state, action) {
     case "add-task":
       return {
         ...state, // deep copy of the state (= initialState above)
-        tasks: [...state.tasks, newTask(action.payload.name)],
+        tasks: [...state.tasks, newTask(action.payload.name, action.payload.important)],
       };
 
     case "delete-task":
@@ -50,8 +50,8 @@ function reducer(state, action) {
 }
 
 // Function to create a new task, give it all the necessary attributes
-function newTask(name) {
-  return { id: Date.now(), name: name, complete: false, important: false };
+function newTask(name, important) {
+  return { id: Date.now(), name: name, complete: false, important: important };
 }
 
 // const TaskContext = React.createContext(initialState);

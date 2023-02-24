@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useTaskState } from "../../../context/TaskContext";
 
 import { Task } from "../Task";
+import { AddTask } from "../AddTask/AddTask";
 
 import "./ImportantTask.css";
 
@@ -75,6 +76,9 @@ export function ImportantTask() {
           </div>
         </div>
       )}
+
+      {/* Send type of task to indicate what styling and what kind of task to add */}
+      <AddTask taskType={{ important: true, styleIconColor: "#ffca28" }} />
     </>
   );
 }
