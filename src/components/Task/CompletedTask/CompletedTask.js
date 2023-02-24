@@ -66,7 +66,7 @@ export function CompletedTask({ inHomePage }) {
             <span className="count-completed-tasks-label">{countCompletedTasks}</span>
           </button>
 
-          <div className="collapse" id="collapseCompletedTasks">
+          <div className="collapse show" id="collapseCompletedTasks">
             {state.tasks.map((task) => {
               if (task.complete) {
                 return (
