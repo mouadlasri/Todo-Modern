@@ -3,7 +3,7 @@ import { useTaskState } from "../../../context/TaskContext";
 
 import { Task } from "../Task";
 import { AddTask } from "../AddTask/AddTask";
-
+import { TaskToolbar } from "../../TaskToolbar/TaskToolbar";
 import "./ImportantTask.css";
 
 export function ImportantTask() {
@@ -34,6 +34,7 @@ export function ImportantTask() {
 
   return (
     <>
+      <TaskToolbar toolbarTitle="Important" />
       {countImportantTasks > 0 && (
         <div className="flex-1 mt-4 items-center">
           <button

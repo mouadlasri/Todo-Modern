@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useTaskState, useTaskDispatch } from "../../../context/TaskContext";
 import { Task } from "../Task";
+import { TaskToolbar } from "../../TaskToolbar/TaskToolbar";
+
 import "./CompletedTask.css";
 
-export function CompletedTask() {
+export function CompletedTask({ inHomePage }) {
   const state = useTaskState();
   const dispatch = useTaskDispatch();
   const [collapsed, setCollapsed] = useState(true);
@@ -33,6 +35,8 @@ export function CompletedTask() {
 
   return (
     <>
+      {/* Check if we are in home page (= not diplay toolbar) or in completed page (= display toolbar) */}
+      {inHomePage ? "" : <TaskToolbar toolbarTitle="Completed" />}
       {countCompletedTasks > 0 && (
         <div className="flex-1 mt-4 items-center ">
           <button

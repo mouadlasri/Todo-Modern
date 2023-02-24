@@ -105,7 +105,7 @@ export function SideNavbar() {
           {sideBarMenu.map((menu) => (
             <li key={menu.id}>
               <Link to={menu.urlRoute}>
-                <div id={menu.divId} classItem="sidebar-list-item">
+                <div id={menu.divId} className="sidebar-list-item">
                   <div
                     className={
                       activeId === menu.id

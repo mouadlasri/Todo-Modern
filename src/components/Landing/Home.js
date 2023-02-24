@@ -3,6 +3,7 @@ import { TaskList } from "../Task/TaskList/TaskList";
 import { useTaskState, useTaskDispatch } from "../../context/TaskContext";
 import { AddTask } from "../Task/AddTask/AddTask";
 import { CompletedTask } from "../Task/CompletedTask/CompletedTask";
+import { TaskToolbar } from "../TaskToolbar/TaskToolbar";
 
 import "./Home.css";
 
@@ -30,7 +31,7 @@ export function Home() {
   return (
     <>
       <h1> </h1>
-
+      <TaskToolbar toolbarTitle="My Day" />
       {/* Three sub components */}
       {/* Component #1 - Display all notes */}
       <div>
@@ -39,7 +40,7 @@ export function Home() {
 
       {/* Component #2 - Display completed notes */}
       <div>
-        <CompletedTask />
+        <CompletedTask inHomePage={true} />
       </div>
 
       {/* Component #3 - Form to add a new Task */}

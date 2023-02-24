@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Task } from "../Task";
+import { TaskToolbar } from "../../TaskToolbar/TaskToolbar";
 
 // Task Context
 import { useTaskState } from "../../../context/TaskContext";
@@ -34,6 +35,8 @@ export function AllTask() {
 
   return (
     <>
+      <TaskToolbar toolbarTitle="All" />
+
       {countAllOnGoingTasks > 0 && (
         <div className="flex-1 mt-4 items-center">
           <button
