@@ -8,8 +8,12 @@ export function AddTask({ taskType }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    dispatch({ type: "add-task", payload: { name: input, important: taskType.important } });
-    setInput("");
+
+    // Trim removes leading or trailing whitespsaces
+    if (input.trim().length > 0) {
+      dispatch({ type: "add-task", payload: { name: input, important: taskType.important } });
+      setInput("");
+    }
   }
 
   function changeStyleFocus() {
